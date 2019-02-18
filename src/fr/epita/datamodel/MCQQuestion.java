@@ -1,5 +1,5 @@
 package fr.epita.datamodel;
 
-public class MCQQuestion {
+public class MCQQuestion extends Question {
 
 }

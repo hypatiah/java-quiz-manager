@@ -1,5 +1,22 @@
 package fr.epita.services.dao;
 
-public class QuizDAO {
+import fr.epita.datamodel.Quiz;
 
+public class QuizDAO {
+	
+	public void create(Quiz quiz) {
+		
+	}
+	
+	public Quiz read(String name) {
+		
+	}
+	
+	public void update(Quiz quiz) {
+		
+	}
+	
+	public void delete(Quiz quiz) {
+		
+	}
 }

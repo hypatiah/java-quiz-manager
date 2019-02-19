@@ -11,8 +11,6 @@ public class Question {
 	
 	private int difficulty;
 
-
-
 	public String getQuestion() {
 		return question;
 	}

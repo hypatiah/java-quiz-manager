@@ -4,9 +4,9 @@ import java.util.List;
 
 public class Exam {
 	
-	private List<Answer> listAnswers;
+	private List<Answer> answers;
 	
-	private List<MCQAnswer> listMCQAnswers;
+	private List<MCQAnswer> MCQAnswers;
 	
 	private long grade;
 
@@ -14,20 +14,20 @@ public class Exam {
 	
 	private Quiz quiz;
 
-	public List<Answer> getListAnswers() {
-		return listAnswers;
+	public List<Answer> getAnswers() {
+		return answers;
 	}
 
-	public void setListAnswers(List<Answer> listAnswers) {
-		this.listAnswers = listAnswers;
+	public void setAnswers(List<Answer> answers) {
+		this.answers = answers;
 	}
 
-	public List<MCQAnswer> getListMCQAnswers() {
-		return listMCQAnswers;
+	public List<MCQAnswer> getMCQAnswers() {
+		return MCQAnswers;
 	}
 
-	public void setListMCQAnswers(List<MCQAnswer> listMCQAnswers) {
-		this.listMCQAnswers = listMCQAnswers;
+	public void setMCQAnswers(List<MCQAnswer> MCQAnswers) {
+		this.MCQAnswers = MCQAnswers;
 	}
 
 	public long getGrade() {

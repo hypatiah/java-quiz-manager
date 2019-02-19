@@ -2,7 +2,7 @@ package fr.epita.datamodel;
 
 public class Answer {
 	
-	private Student student;
+	private Exam exam;
 	
 	private Question question;
 	
@@ -16,12 +16,17 @@ public class Answer {
 		this.text = text;
 	}
 
-	public Student getStudent() {
-		return student;
+	public Student getExam() {
+		return exam;
 	}
 
-	public void setStudent(Student student) {
-		this.student = student;
+	/**
+	   *
+	   * Set the exam
+	   *
+	*/
+	public void setExam(Exam exam) {
+		this.exam = exam;
 	}
 
 	public Question getQuestion() {

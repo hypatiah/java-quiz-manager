@@ -65,9 +65,17 @@ public class QuestionDAO {
 	}
 	
 	public void delete(Question question) {
-		//TODO open connection
-		//TODO prepare SQL statement
-		//TODO add parameters
-		//TODO execute statement
+		try {
+			// open connection
+			Connection connection = DriverManager.getConnection(DB_URI, DB_USERNAME, DB_PASSWORD);
+			// prepare SQL statement
+			PreparedStatement statement = connection.prepareStatement("DELETE QUESTION WHERE ID = ?");
+			// add parameters
+			statement.setInt(0, question.getId());
+			// execute statement
+			statement.execute();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 }

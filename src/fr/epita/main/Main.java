@@ -1,14 +1,16 @@
 package fr.epita.main;
 
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.List;
+//import java.io.IOException;
+//import java.nio.file.Files;
+//import java.nio.file.Paths;
+//import java.util.List;
 import java.util.Scanner;
 
 //import fr.epita.datamodel.Exam;
 import fr.epita.datamodel.Quiz;
 //import fr.epita.datamodel.Student;
+
+import fr.epita.services.dao.QuizDAO;
 
 public class Main {
 	/**
@@ -20,13 +22,17 @@ public class Main {
 		System.out.println("* Welcome to the Create a Quiz page *");
 		System.out.println("Title of quiz:");
 		String title = scanner.nextLine();
-		System.out.println("Your title is : " + title);
+		Quiz quiz = new Quiz(title);
+		QuizDAO quizDAO = new QuizDAO();
+		quizDAO.create(quiz);
+		
+		System.out.println("Your title is : " + quiz.getTitle());
 		System.out.println("Number of multiple choice questions (i.e. enter '5' or '10'):");
 		int mcqLength = scanner.nextInt();
 		int mcqNumber = 1;
 		while (mcqNumber <= mcqLength) {
 			System.out.println("Multiple Choice Question #" + mcqNumber + ".");
-			System.out.println("Question title: " + title);
+			System.out.println("Question title: ");
 			String mcqTitle = scanner.nextLine();
 			System.out.println("Answer 1 of 4: Please enter the correct answer:");
 			String validAnswer = scanner.nextLine();

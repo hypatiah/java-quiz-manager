@@ -5,8 +5,11 @@ import java.util.List;
 public class Quiz {
 	private int id;
 	private String title;
-	
 	private List<Question> questions;
+	
+	public Quiz(String title) {
+		this.title = title;
+	}
 
 	public String getTitle() {
 		return title;

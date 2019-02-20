@@ -18,7 +18,7 @@ public class Main {
 	/**
 	 * 
 	 * The Quiz Manager console interface to take a quiz or perform CRUD on quizzes
-	 * @param args
+	 * @param args - the standard format for main method
 	 */
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
@@ -69,7 +69,6 @@ public class Main {
 		Quiz quiz = new Quiz(title); // instantiation of quiz
 		QuizDAO quizDAO = new QuizDAO();
 		quizDAO.create(quiz);
-		
 		System.out.println("Your title is : " + quiz.getTitle());
 		System.out.println("Number of multiple choice questions (i.e. enter '5' or '10'):");
 		int mcqLength = scanner.nextInt();
@@ -107,6 +106,12 @@ public class Main {
 	 */
 	private static void deleteQuizInterface(Scanner scanner) {
 		System.out.println("* Welcome to the Delete a Quiz page *");
+		System.out.println("Please enter the title of the Quiz you would like to delete");
+		String title = scanner.nextLine();
+		// delete the quiz in quizDAO sql query
+		// extra: add option to view quizzes and delete quiz by title or id
+		// if deletion success:
+		System.out.println("You have successfully deleted the quiz.");
 	}
 }
 

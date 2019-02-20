@@ -15,8 +15,8 @@ public class QuizDAO {
 	public void create(Quiz quiz) {
 		try {
 			Connection connection = DriverManager.getConnection(DB_URI, DB_USERNAME, DB_PASSWORD);
-			PreparedStatement statement = connection.prepareStatement("INSERT INTO QUIZ VALUES ?");
-//			PreparedStatement statement = connection.prepareStatement("INSERT INTO QUIZ VALUES (?, ?)");
+			PreparedStatement statement = connection.prepareStatement("INSERT INTO QUIZZES VALUES ?");
+//			PreparedStatement statement = connection.prepareStatement("INSERT INTO QUIZZES VALUES (?, ?)");
 			statement.setString(0, quiz.getTitle());
 //			statement.setInt(1, quiz.getDifficulty());
 			statement.execute();

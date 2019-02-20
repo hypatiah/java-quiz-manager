@@ -11,7 +11,10 @@ public class AnswerDAO {
 	}
 	
 	public Answer read(String name) {
-		
+		// create connection
+		// create query
+		// add parameters to query
+		// execute query
 	}
 	
 	public void update(Answer answer) {

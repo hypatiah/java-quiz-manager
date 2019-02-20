@@ -23,7 +23,6 @@ public class QuizDAO {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}    
-		
 	}
 	
 	public Quiz read(String title) {

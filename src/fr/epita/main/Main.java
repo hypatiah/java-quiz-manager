@@ -8,11 +8,55 @@ import java.util.Scanner;
 
 //import fr.epita.datamodel.Exam;
 import fr.epita.datamodel.Quiz;
+import fr.epita.datamodel.Question;
 //import fr.epita.datamodel.Student;
 
 import fr.epita.services.dao.QuizDAO;
 
 public class Main {
+	
+	/**
+	 * 
+	 * The Quiz Manager console interface to take a quiz or perform CRUD on quizzes
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Welcome to Quiz Manager!");
+		System.out.println("Please enter '1' if you are a quiz manager or enter '2' if you are a student");
+		int role = scanner.nextInt();
+		switch (role) {
+		case 1:
+			System.out.println("**** Bonjour Quiz Manager ****");
+			System.out.println("To create a quiz enter '1', to update a quiz enter '2' and to delete a quiz enter '3'");
+			int crudAction = scanner.nextInt();
+			while (crudAction != 1 || crudAction != 2 || crudAction != 3) {
+				System.out.println("Input error. Please enter '1' to create '2' to update or '3' to delete a quiz.");
+				crudAction = scanner.nextInt();
+			}
+			switch (crudAction) {
+			case 1:
+				Main.createQuizInterface(scanner);
+				break;
+			case 2:
+				Main.updateQuizInterface(scanner);
+				break;
+			case 3:
+				Main.deleteQuizInterface(scanner);
+				break;
+			default:
+				System.out.println("Error");
+			}
+			break;
+		case 2:
+			System.out.println("**** Bonjour Student ****");
+			
+			break;
+		default:
+			System.out.println("Wrong input. Please enter either '1' for quiz manager and '2' for student");
+		}
+	}
+	
 	/**
 	 * 
 	 * The console interface to create a quiz
@@ -22,7 +66,7 @@ public class Main {
 		System.out.println("* Welcome to the Create a Quiz page *");
 		System.out.println("Title of quiz:");
 		String title = scanner.nextLine();
-		Quiz quiz = new Quiz(title);
+		Quiz quiz = new Quiz(title); // instantiation of quiz
 		QuizDAO quizDAO = new QuizDAO();
 		quizDAO.create(quiz);
 		
@@ -49,64 +93,20 @@ public class Main {
 	
 	/**
 	 * 
-	 * The Quiz Manager console interface to take a quiz or perform CRUD on quizzes
-	 * @param args
+	 * The console interface to update a quiz
+	 * @param scanner - the scanner object
 	 */
-	public static void main(String[] args) {
-		Scanner scanner = new Scanner(System.in);
-		System.out.println("Welcome to Quiz Manager!");
-		System.out.println("Please enter '1' if you are a quiz manager or enter '2' if you are a student");
-		int role = scanner.nextInt();
-		switch (role) {
-		case 1:
-			System.out.println("**** Bonjour gestionnaire de quiz ****");
-			System.out.println("To create a quiz enter '1', to update a quiz enter '2', to delete ad quiz enter '3', and to view a quiz enter '4");
-			int quizCrud = scanner.nextInt();
-			switch (quizCrud) {
-			case 1:
-				Main.createQuizInterface(scanner);
-				break;
-			case 2:
-				System.out.println("* Welcome to the Update a Quiz Page *");
-				
-				break;
-			case 3:
-				System.out.println("* Welcome to the Delete a Quiz Page *");
-				
-				break;
-			case 4:
-				System.out.println("* Welcome to the View a Quiz Page *");
-				
-				break;
-			default:
-				// TODO: repeat loop
-				System.out.println("* Wrong input. Please enter either '1' for quiz manager and '2' for student *");
-			}
-			break;
-		case 2:
-			System.out.println("**** Bonjour étudiant ****");
-			
-			break;
-		default:
-			System.out.println("Wrong input. Please enter eithe '1' for quiz manager and '2' for student");
-		}
-
-//		Doctor doctor = new Doctor("John Smith", 42);      // instantiation of doctor
-//		Patient patient = new Patient("Bobby Rickman", 28);  // instantiation of patient
-//		Nurse nurse = new Nurse("Marlene Simmons", 38);    // instantiation of nurse
-//		Appointment appointment = new Appointment(doctor, patient, new Date(), AppointmentType.OPERATION);
-//		// instantiation of appointment with doctor, patient, date and appointment type as parameters
-//		List<Nurse> nursesInvolved = new ArrayList<Nurse>();
-//		nursesInvolved.add(nurse); // put the nurse in a list
-//		
-//		appointment.setNursesInvolved(nursesInvolved); // add list of nurses to appointment
-//		
-//		System.out.println("Appointment set for " + appointment.getAppointmentDate());
-//		System.out.println("Doctor of the appointment : " + doctor.getName());
-//		System.out.println("Patient concerned : " + patient.getName());
-//		for (Nurse nurseInvolved : appointment.getNursesInvolved()) { // for each nurse involved in the operation
-//			System.out.println("Nurse involved : " + nurseInvolved.getName());
-//		}
+	private static void updateQuizInterface(Scanner scanner) {
+		System.out.println("* Welcome to the Update a Quiz page *");
+	}
+	
+	/**
+	 * 
+	 * The console interface to delete a quiz
+	 * @param scanner - the scanner object
+	 */
+	private static void deleteQuizInterface(Scanner scanner) {
+		System.out.println("* Welcome to the Delete a Quiz page *");
 	}
 }
 

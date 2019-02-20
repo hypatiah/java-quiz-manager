@@ -16,7 +16,6 @@ public class QuestionDAO {
 	private static final String DB_USERNAME = "sa";
 	private static final String DB_URI = "jdbc:h2:~/java-quiz-manager";
 										//"jdbc:h2:C:/Formation/db/h2DS"
-
 	
 	public void create(Question question) {
 		try {

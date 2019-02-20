@@ -5,6 +5,11 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
+/**
+ * A singleton class to configure database application properties
+ * @author daniellehassid
+ *
+ */
 public class Configuration {
 
 	private Properties properties;
@@ -20,7 +25,9 @@ public class Configuration {
 	}
 	
 	public static Configuration getInstance() {
+		// if there is no instance yet
 		if (configuration == null) {
+			// initialize configuration
 			configuration = new Configuration();
 		}
 		return configuration;

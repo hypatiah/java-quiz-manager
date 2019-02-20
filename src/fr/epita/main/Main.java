@@ -1,15 +1,9 @@
 package fr.epita.main;
 
-//import java.io.IOException;
-//import java.nio.file.Files;
-//import java.nio.file.Paths;
-//import java.util.List;
 import java.util.Scanner;
 
-//import fr.epita.datamodel.Exam;
 import fr.epita.datamodel.Quiz;
 import fr.epita.datamodel.Question;
-//import fr.epita.datamodel.Student;
 
 import fr.epita.services.dao.QuizDAO;
 
